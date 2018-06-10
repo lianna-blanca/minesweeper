@@ -14,7 +14,7 @@ function gameBoard() {
 			board.cells.push({
 				row: v,
 				col: h,
-				isMine: false, //change later
+				isMine: Math.floor(Math.random() * 1.5),
 				isMarked: false,
 				hidden: true,
 			})
