@@ -44,15 +44,22 @@ function checkForWin () {
   //   lib.displayMessage('You win!')
 }
 
+
+
 // Define this function to count the number of mines around the cell
 // (there could be as many as 8). You don't have to get the surrounding
 // cells yourself! Just use `lib.getSurroundingCells`: 
-//
-//   var surrounding = lib.getSurroundingCells(cell.row, cell.col)
-//
+//   	var surrounding = lib.getSurroundingCells(cell.row, cell.col)
 // It will return cell objects in an array. You should loop through 
 // them, counting the number of times `cell.isMine` is true.
 function countSurroundingMines (cell) {
-	
+
 	var surroundingCells = getSurroundingCells(row, col);
+
+// define it so returns the no of surrounding cells with isMine = true
+// use  	var surrounding = lib.getSurroundingCells(cell.row, cell.col)
+// get row and col out of your cell  ---> board.cell.X / []
+// loop through surrounding cells returned from getSurroundingCells,
+// check all formine,  add to a count variable if so (like last time)
+// then (return count)
 }
