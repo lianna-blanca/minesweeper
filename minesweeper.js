@@ -6,14 +6,14 @@ var board = {
 	cells: []
 	}
 
-var boardSize = 2;
+var boardSize = 3; //max at 6
 
 function gameBoard() {
 	for (var v = 0; v < boardSize; v++) {
 		for (var h = 0; h < boardSize; h++) {
 			board.cells.push({
-				row: r,
-				col: c,
+				row: v,
+				col: h,
 				isMine: false, //change later
 				isMarked: false,
 				hidden: true,
@@ -24,6 +24,7 @@ function gameBoard() {
 
 
 function startGame () {
+	gameBoard();
   for (i = 0, i <= board.cells.length; i++;) {
   	board.cells[i].surroundingMines = countSurroundingMines(board.cells[i]);
   }
