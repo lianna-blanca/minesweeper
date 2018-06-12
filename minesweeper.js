@@ -3,31 +3,31 @@ document.addEventListener('DOMContentLoaded', startGame)
 // Define your `board` object here!
 
 var board = {
-	cells: []
-	}
+  cells: []
+  }
 
 var boardSize = 3; //max at 6
 
 function gameBoard() {
-	for (var v = 0; v < boardSize; v++) {
-		for (var h = 0; h < boardSize; h++) {
-			board.cells.push({
-				row: v,
-				col: h,
-				isMine: Boolean(Math.floor(Math.random()*1.5)),
-				isMarked: false,
-				hidden: true,
-			})
-		}
-	}
+  for (var v = 0; v < boardSize; v++) {
+    for (var h = 0; h < boardSize; h++) {
+      board.cells.push({
+        row: v,
+        col: h,
+        isMine: Boolean(Math.floor(Math.random()*1.5)),
+        isMarked: false,
+        hidden: true,
+      })
+    }
+  }
 console.log(board.cells)
 }
 
 
 function startGame () {
-	gameBoard();
+  gameBoard();
   for (i = 0, i <= board.cells.length; i++;) {
-  	board.cells[i].surroundingMines = countSurroundingMines(board.cells[i]);
+    board.cells[i].surroundingMines = countSurroundingMines(board.cells[i]);
   }
 
   // Don't remove this function call: it makes the game work!
@@ -55,14 +55,14 @@ function checkForWin () {
 // them, counting the number of times `cell.isMine` is true.
 
 function countSurroundingMines (cell) {
-	var surroundingCells = lib.getSurroundingCells(cell.row, cell.col);
-	var count = 0;
-	
-	for (var i = 0; i < surroundingCells.length; i++) {
-		if (surroundingCells[i].isMine) {
-			count++;
-		}
-	}
-	return count
-	console.log(count)
+  var surroundingCells = lib.getSurroundingCells(cell.row, cell.col);
+  var count = 0;
+  
+  for (var i = 0; i < surroundingCells.length; i++) {
+    if (surroundingCells[i].isMine) {
+      count++;
+    }
+  }
+  return count
+  console.log(count)
 }
