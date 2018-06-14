@@ -6,7 +6,7 @@ var board = {
   cells: []
   }
 
-var boardSize = 3; //max at 6
+var boardSize = 5; //max at 6
 
 function gameBoard() {
   for (var v = 0; v < boardSize; v++) {
@@ -20,13 +20,12 @@ function gameBoard() {
       })
     }
   }
-console.log(board.cells)
 }
 
 
 function startGame () {
   gameBoard();
-  for (i = 0, i <= board.cells.length; i++;) {
+  for (var i = 0; i < board.cells.length; i++) {
     board.cells[i].surroundingMines = countSurroundingMines(board.cells[i]);
   }
 
@@ -64,5 +63,4 @@ function countSurroundingMines (cell) {
     }
   }
   return count
-  console.log(count)
 }
