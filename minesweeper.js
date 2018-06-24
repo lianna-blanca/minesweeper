@@ -6,7 +6,7 @@ var board = {
   cells: []
   }
 
-var boardSize = 2; //max at 6
+var boardSize = 4; //max at 6
 
 function gameBoard() {
   for (var v = 0; v < boardSize; v++) {
@@ -41,7 +41,7 @@ function checkForWin () {
     if (!board.cells[i].isMine && board.cells[i].hidden) {return}
     if (board.cells[i].isMine && !board.cells[i].isMarked) {return}
     }
-lib.displayMessage('You win!')
+lib.displayMessage('You found them all!')
 }
 
 // Define this function to count the number of mines around the cell
