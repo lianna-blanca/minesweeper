@@ -41,8 +41,12 @@ function checkForWin () {
     if (!board.cells[i].isMine && board.cells[i].hidden) {return}
     if (board.cells[i].isMine && !board.cells[i].isMarked) {return}
     }
+var winSound = document.getElementsByClassName("win")[0];
+winSound.play();
 lib.displayMessage('You found them all!')
 }
+
+
 
 // Define this function to count the number of mines around the cell
 // (there could be as many as 8). You don't have to get the surrounding
@@ -63,4 +67,10 @@ function countSurroundingMines (cell) {
     }
   }
   return count
+}
+
+function restart() {
+  document.getElementsByClassName("board")[0].innerHTML = "";
+  board = { cells: [] };
+  startGame();
 }
